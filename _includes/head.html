@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{% seo %}
+
+<!-- Styles -->
+<link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}" />
+{% minibundle css %}
+destination_path: 'assets/css/bundle'
+baseurl: '{{ site.baseurl }}/'
+assets:
+- ../node_modules/mdb-ui-kit/css/mdb.min
+- ../node_modules/@fortawesome/fontawesome-free/css/all
+- lib/jekyll-pygments-themes/proti
+- css/fonts
+{% endminibundle %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css?v=' | append: site.github.build_revision | relative_url }}" />

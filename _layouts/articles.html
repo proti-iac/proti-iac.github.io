@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="pnav d-lg-none"></div>
+<main>
+    {% include articles.html articles=page.head_articles %}
+
+    {% include navbar.html header-class="fixed-top sticky-lg-top" %}
+
+    {% include articles.html articles=page.articles %}
+</main>
+
+{% include footer.html %}

@@ -1,0 +1,73 @@
+<footer class="text-center text-lg-start bg-primary text-light pt-5">
+    <div class="container-md text-center text-md-start">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                    {{ site.title }}
+                </h6>
+                <p>
+                    {{ site.description }}
+                </p>
+                <p>
+                    ProTI is a project of the <a href="https://programming-group.com" class="text-reset" target="_blank">Programming Group</a>
+                    at the <a href="https://www.unisg.ch" class="text-reset" target="_blank">University of St. Gallen</a>.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-lg-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                    Resources
+                </h6>
+                {% assign resources = site.data.resources %}
+                {% for resource in resources %}
+                    <p><a href="{{ resource.url }}" class="text-reset" target="_blank">
+                        {% if resource.icon %}<i class="{{ resource.icon }}"></i>&nbsp;{% endif %}
+                        {{ resource.title }}
+                    </a></p>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-4 col-lg-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                    Contributors
+                </h6>
+                {% for contributor in site.data.contributors %}
+                    <p><a href="{{ contributor.url }}" class="text-reset" target="_blank">
+                        {% if contributor.icon %}<i class="{{ contributor.icon }}"></i>&nbsp;{% endif %}
+                        {{ contributor.name }}
+                    </a></p>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-4 col-lg-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                    Support
+                </h6>
+                {% for agency in site.data.supports %}
+                    <p>
+                        <a href="{{ agency[1].url }}" class="text-reset" target="_blank">
+                            <b>
+                                {% if agency[1].icon %}<i class="{{ agency[1].icon }}"></i>&nbsp;{% endif %}
+                                {{ agency[0] }}
+                            </b>
+                        </a><br />
+                        {% for project in agency[1].projects %}
+                            <a href="{{ project.url }}" class="text-reset" target="_blank">
+                                {% if project.icon %}<i class="{{ project.icon }}"></i>&nbsp;{% endif %}
+                                {{ project.title }}
+                            </a><br />
+                        {% endfor %}
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        &copy; Copyright {{ site.time | date: '%Y' }}.
+        {% if site.impressum_path %}
+            <a href="{{ site.impressum_path | relative_path }}" class="text-reset">Impressum</a>.
+        {% endif %}
+        Last updated: {{ "now" | date: '%B %d, %Y' }}.
+    </div>
+</footer>

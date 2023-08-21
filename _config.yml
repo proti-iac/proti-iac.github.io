@@ -1,0 +1,123 @@
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
+
+title: ProTI Infrastructure as Code Testing
+description:
+
+url: https://proti-iac.github.io # the base hostname & protocol for your site
+baseurl: # the subpath of your site, e.g. /blog/
+last_updated: true # set to true if you want to display last updated in the footer
+impressum_path: /impressum # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
+
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
+
+github_username: proti-iac # your GitHub user name
+twitter_username: # your Twitter handle
+youtube_channel: # your YouTube channel id
+linkedin_username: # your LinkedIn user name
+scholar_userid: # your Google Scholar ID
+orcid_id: # your ORCID ID
+medium_username: # your Medium username
+quora_username: # your Quora username
+publons_id: # your ID on Publons
+research_gate_profile: # your profile on ResearchGate
+blogger_url: # your blogger URL
+work_url: # work page URL
+keybase_username: # your keybase user name
+wikidata_id: # your wikidata id
+
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+
+collections:
+  articles: # Standalone articles, also used on pages using articles layout
+    output: true
+    permalink: /articles/:path
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+# Markdown and syntax highlight
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+# Includes & excludes
+include: ['_pages']
+exclude: ['bin', 'LICENSE', 'node_modules', 'package.json', 'package-lock.json', 'README.md', 'vendor']
+
+# Plug-ins
+plugins:
+  - jekyll/minibundle
+  - jekyll/scholar
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-regex-replace
+
+defaults:
+  -
+    scope:
+      path: "assets/lib/**"
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og/mjuz.png # Default open graph image
+
+# -----------------------------------------------------------------------------
+# Jekyll Scholar
+# -----------------------------------------------------------------------------
+
+scholar:
+
+  last_name:
+  first_name: []
+
+  style: apa
+  locale: en
+
+  relative: /
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
+  sort_by: year,month
+  order: descending
+
+
+# -----------------------------------------------------------------------------
+# Minibundle
+# -----------------------------------------------------------------------------
+minibundle:
+  minifier_commands:
+    css: node_modules/.bin/uglifycss
+    js: node_modules/.bin/uglifyjs
+
+
+# -----------------------------------------------------------------------------
+# SASS
+# -----------------------------------------------------------------------------
+sass:
+  style: compact

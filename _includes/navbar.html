@@ -1,0 +1,36 @@
+<header class="{{ include.header-class }}">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-md">
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand m-auto" href="{{ '/#proti' | relative_url }}">
+                <img
+                        src="{{ '/assets/img/logo_small.svg' | relative_url }}"
+                        alt="ProTI"
+                        loading="lazy"
+                        class="navbar-height my-n3"
+                />
+            </a>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav nav me-auto mb-2 mb-sm-0">
+                    {% assign items = site.pages | concat: site.articles | where: 'nav', true | sort: 'nav_rank' %}
+                    {% for item in items %}
+                    <li class="nav-item">
+                        {% assign itemUrl = item.nav_url | default: item.url %}
+                        <a class="nav-link {% if page.title == item.title %}active{% endif %}" href="{{ itemUrl }}">{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

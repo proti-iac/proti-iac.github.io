@@ -1,0 +1,10 @@
+_site
+.bundle
+.sass-cache
+.jekyll-metadata
+.DS_store
+.tweet-cache/
+vendor
+node_modules
+.idea/
+.jekyll-cache/

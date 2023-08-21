@@ -1,0 +1,8 @@
+<article class="{% unless include.item.no_container == true %}container-md my-3 my-md-5{% endunless %}" id="{{ include.item.id | split: '/' | last }}">
+    {% unless include.item.hide_title == true %}
+        <header class="my-3">
+            <h1>{{ include.item.title }}</h1>
+        </header>
+    {% endunless %}
+    {{ include.item.content | markdownify }}
+</article>

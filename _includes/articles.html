@@ -1,0 +1,7 @@
+{% for articleName in include.articles %}
+    {% assign articleId = articleName | prepend: '/articles/' %}
+    {% assign item = site.articles | where: 'id', articleId | first %}
+    {% if item %}
+        {% include article.html item=item %}
+    {% endif %}
+{% endfor %}

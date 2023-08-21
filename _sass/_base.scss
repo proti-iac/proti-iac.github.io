@@ -1,0 +1,120 @@
+.bg-primary {
+  background-color: $proti-color !important;
+}
+
+a {
+  color: $proti-color;
+}
+
+a:hover {
+  color: $proti-dark-color;
+}
+
+.navbar-height {
+  height: $navbar-height;
+  @media(min-width: $navbar-small-break) {
+    height: $navbar-small-height;
+  }
+}
+
+.pnav {
+  padding-top: $navbar-height;
+  @media(min-width: $navbar-small-break) {
+    padding-top: $navbar-small-height;
+  }
+}
+
+article:before {
+  margin-top: -$navbar-height;
+  height: $navbar-height;
+  @media(min-width: $navbar-small-break) {
+    margin-top: -$navbar-small-height;
+    height: $navbar-small-height;
+  }
+  content: "";
+  display: block;
+}
+
+span.proti {
+  position: relative;
+
+  &:first-letter {
+    font-style: italic;
+    margin-right: 100%;
+    margin-left: .1em;
+    text-transform: lowercase;
+  }
+
+  &:after {
+    content: 'S';
+    position: absolute;
+    font-weight: inherit;
+    top: 0;
+    left: 0;
+    transform: scale(.65, .65) translate(.8em, .17em);
+  }
+
+  font-family: "Times New Roman";
+  display: inline-block;
+  transform: scale(1.6, 1.6) translate(.1em, 0.04em);
+  overflow: hidden;
+  line-height: 1.2em;
+  height: 1.2em;
+  width: 1.3em;
+  word-break: break-all;
+  margin-top: -1em;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  span.proti:after {
+    font-weight: bold;
+  }
+}
+
+.jumbotron {
+  background: linear-gradient(
+                  115deg,
+                  rgba(255, 255, 255, 1) 40%,
+                  rgba(47, 168, 131, 1) 75%
+  );
+
+  h1 {
+    img {
+      margin: -10% -18% 0 -18%;
+      width: 128%;
+      max-height: 80vh;
+    }
+
+    font-weight: normal;
+    width: 350px;
+    max-width: 100%;
+    font-size: 1.8rem;
+  }
+
+  .card img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .container:first-child {
+    min-height: m#{i}n(900px, 75vh);
+  }
+}
+
+// Bibliography
+
+ol.bibliography {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+
+  li {
+    margin-bottom: 2rem;
+
+    .abbr {
+      display: inline;
+      text-align: right;
+      float: right;
+    }
+  }
+}
