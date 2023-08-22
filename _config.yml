@@ -76,7 +76,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/img/og/mjuz.png # Default open graph image
+      image: /assets/img/og/proti.png # Default open graph image
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
