@@ -41,7 +41,7 @@ nav: false
                             <div class="card-body">
                                 <h5 class="card-title">Custom Specifications</h5>
                                 <p class="card-text">
-                                    ProTI provides ad-hoc specification syntax to augment test case generation and validation strategies with application-specific values and checks.
+                                    ProTI provides ad-hoc specification syntax to augment test case generation and validation with application-specific values and checks.
                                 </p>
                             </div>
                         </div>
@@ -56,7 +56,7 @@ nav: false
                             <div class="card-body">
                                 <h5 class="card-title">Extensible Plugins</h5>
                                 <p class="card-text">
-                                    ProTI features an extensible plugin mechanism for test generators and oracles, enabling reuse, exchange, and research on novel strategies for IaC testing.
+                                    ProTI features an extensible plugin mechanism for test generators and oracles, enabling reuse, exchange, and research on novel strategies for IaC program testing.
                                 </p>
                             </div>
                         </div>
@@ -68,7 +68,7 @@ nav: false
     <div class="p-3" style="background-color: rgba(255, 255, 255, .7);">
         <div class="my-3 text-center">
             <p class="lead" markdown="1">
-                ProTI is open source: [Find out more]({{ '/#example' | relative_url }}) below, read [the publications]({{ '/#publications' | relative_url }})
+                ProTI is open source: [Find out more]({{ '/#iac-programs' | relative_url }}) below, read [the publications]({{ '/#publications' | relative_url }})
                 and [<i></i>{: .fab .fa-github } try it out](https://github.com/proti-iac/proti){: target="_blank" }.
             </p>
             <p class="lead" markdown="1">
