@@ -7,7 +7,7 @@ nav_rank: 3
 nav_url: /#testing-problem # Url to navigate to, e.g., on article page (defaults to .url)
 ---
 
-<div class="row mb-6 align-items-end">
+<div class="row align-items-end">
     <div class="col-12 col-lg-6" markdown="1">
 The correctness of IaC programs is crucial.
 Faults can cause the entire deployment to malfunction.
