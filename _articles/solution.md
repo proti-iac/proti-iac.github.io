@@ -14,15 +14,15 @@ We present ProTI,
 our implementation of the Automated Configuration Testing framework for Pulumi TypeScript IaC programs.
 ProTI builds upon the popular JavaScript testing framework [Jest](https://jestjs.io/){: target="_blank"},
 implementing Jest runner, test-runner, and reporter plugins that jointly achieve automated IaC program testing.
-The respective NPM packages are `@proti/runner`, `@proti/test-runner`, and `@proti/reporter`.
-`@proti/core` implements the core mechanisms and abstractions,
+The respective NPM packages are `@proti-iac/runner`, `@proti-iac/test-runner`, and `@proti-iac/reporter`.
+`@proti-iac/core` implements the core mechanisms and abstractions,
 i.e., module loading, scheduling, plugin interfaces, and utilities.
 For random-based test abstractions, we reuse the popular JavaScript property-based testing implementation [fast-check](https://fast-check.dev){: target="_blank" }.
-`@proti/spec` implements the inline specifications syntax,
+`@proti-iac/spec` implements the inline specifications syntax,
 which – only when run in ProTI – hooks into ProTI's central test scheduling and plugin interface mechanism.
 
 Beyond the core infrastructure and abstractions,
-we implement the first plugins in `@proti/pulumi-packages-schema`.
+we implement the first plugins in `@proti-iac/pulumi-packages-schema`.
 They are type-based, leveraging input and output configuration type metadata from [Pulumi package schemas](https://www.pulumi.com/docs/using-pulumi/pulumi-packages/schema/){: target="_blank" }.
 By design, these are available for all resource types distributed in [Pulumi packages](https://www.pulumi.com/product/packages/){: target="_blank" }.
 The generator plugin composes primitive fast-check arbitraries to a complex arbitrary
